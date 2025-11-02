@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-interface TypingStats {
+export interface TypingStats {
   wpm: number;
   accuracy: number;
   time: number;
@@ -142,7 +142,7 @@ export default function TypingPractice({
     }
 
     // Handle special characters visibility
-    const displayChar = char === ' ' ? '·' : char === '\n' ? '↵' : char === '\t' ? '→' : char;
+    const displayChar = char === '\n' ? '↵' : char === '\t' ? '→' : char;
 
     return (
       <span key={index} className={`${className} transition-colors duration-75`}>
